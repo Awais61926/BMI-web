@@ -10,11 +10,13 @@ function App() {
   const bmicalculation=()=>{
     let bmi=0;
     bmi = weight/(height)**2;
-    alert('your bmi is'+bmi);
     setBmi(bmi)
 
 
   } 
+  const reload=()=>{
+    window.location.reload();
+  }
   if(bmi>0 && bmi<18.5 ){
     message= 'you are underwight'
   }
@@ -39,6 +41,7 @@ function App() {
           value={weight}
           onChange={(txt) => setWeight(txt.target.value)}
           className="inputs"
+
         />
      
       
@@ -52,7 +55,7 @@ function App() {
       
     </form>
     <div style={{ display: 'flex', gap: '10px' }}>
-      <MyButton title={'Reload'} onClick={bmicalculation} />
+      <MyButton title={'Reload'} onClick={reload} />
       <MyButton title={'Calculate'} onClick={bmicalculation} />
     </div>
     <div>
